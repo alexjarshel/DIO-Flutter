@@ -1,4 +1,5 @@
 import 'package:first_proect_dio/pages/home_page.dart';
+import 'package:first_proect_dio/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,6 +15,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,
         ),
-        home: HomePage());
+        home: LgginPage());
   }
 }
