@@ -12,23 +12,50 @@ class _LgginPageState extends State<LgginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: const Color.fromARGB(255, 236, 241, 243),
+      backgroundColor: const Color.fromARGB(0, 0, 0, 0),
       body: Container(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 150,
+              height: 50,
             ),
-            const Icon(
-              Icons.person,
-              size: 150,
-              color: Colors.blue,
+            Row(
+              children: [
+                Expanded(child: Container()),
+                Expanded(
+                  flex: 8,
+                  child: Image.network(
+                    'https://hermes.digitalinnovation.one/assets/diome/logo.png',
+                  ),
+                ),
+                Expanded(child: Container()),
+              ],
             ),
             const SizedBox(
               height: 50,
             ),
+            Text(
+              'is registered?',
+              style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Login here and make the change',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
             Container(
                 width: double.infinity,
                 margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -39,11 +66,17 @@ class _LgginPageState extends State<LgginPage> {
                   children: [
                     Expanded(
                       flex: 3,
-                      child: Text('Inform  your email'),
+                      child: Text(
+                        'Inform email',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Expanded(
                       flex: 3,
-                      child: Text('email'),
+                      child: Text(
+                        'email',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 )),
@@ -57,15 +90,23 @@ class _LgginPageState extends State<LgginPage> {
                   children: [
                     Expanded(
                       flex: 3,
-                      child: Text('Inform  your password'),
+                      child: Text(
+                        'Inform password',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Expanded(
                       flex: 3,
-                      child: Text('password'),
+                      child: Text(
+                        'password',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 )),
-            Expanded(child: Container()),
+            const SizedBox(
+              height: 30,
+            ),
             Container(
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -77,15 +118,31 @@ class _LgginPageState extends State<LgginPage> {
             const SizedBox(
               height: 10,
             ),
+            Expanded(child: Container()),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 30),
               //color: Colors.red,
               height: 30,
               alignment: Alignment.center,
-              child: const Text('Subscribe'),
+              child: const Text(
+                'Forgot password',
+                style:
+                    TextStyle(color: Colors.amber, fontWeight: FontWeight.w400),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              //color: Colors.red,
+              height: 30,
+              alignment: Alignment.center,
+              child: const Text(
+                'Create account',
+                style:
+                    TextStyle(color: Colors.green, fontWeight: FontWeight.w400),
+              ),
             ),
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
           ],
         ),
