@@ -13,7 +13,7 @@ class _LgginPageState extends State<LgginPage> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,53 +57,56 @@ class _LgginPageState extends State<LgginPage> {
               height: 40,
             ),
             Container(
-                width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 30),
-                //color: Colors.green,
-                height: 30,
-                alignment: Alignment.center,
-                child: const Row(
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Text(
-                        'Inform email',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Text(
-                        'email',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
-                )),
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              //color: Colors.green,
+              height: 30,
+              alignment: Alignment.center,
+              child: const TextField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(top: 0),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color.fromARGB(255, 141, 79, 151))),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color.fromARGB(255, 141, 79, 151))),
+                    hintText: 'Email',
+                    hintStyle: TextStyle(color: Colors.white),
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Color.fromARGB(255, 141, 79, 151),
+                    )),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
             Container(
-                width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 30),
-                //color: Colors.green,
-                height: 30,
-                alignment: Alignment.center,
-                child: const Row(
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Text(
-                        'Inform password',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Text(
-                        'password',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
-                )),
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              //color: Colors.green,
+              height: 30,
+              alignment: Alignment.center,
+              child: const TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(top: 0),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromARGB(255, 141, 79, 151))),
+                  hintText: 'Password',
+                  hintStyle: TextStyle(color: Colors.white),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Color.fromARGB(255, 141, 79, 151),
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility_off,
+                    color: Color.fromARGB(255, 141, 79, 151),
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -115,17 +118,17 @@ class _LgginPageState extends State<LgginPage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {},
-                    child: Text('Login',
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                        backgroundColor: MaterialStateProperty.all(
+                            const Color.fromARGB(255, 141, 79, 151))),
+                    child: const Text('Login',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                         )),
-                    style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                        backgroundColor: MaterialStateProperty.all(
-                            Color.fromARGB(255, 141, 79, 151))),
                   ),
                 )),
             const SizedBox(
