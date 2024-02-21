@@ -36,7 +36,7 @@ class _LgginPageState extends State<LgginPage> {
             const SizedBox(
               height: 50,
             ),
-            Text(
+            const Text(
               'is registered?',
               style: TextStyle(
                   fontSize: 26,
@@ -46,7 +46,7 @@ class _LgginPageState extends State<LgginPage> {
             const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Login here and make the change',
               style: TextStyle(
                   fontSize: 14,
@@ -108,13 +108,26 @@ class _LgginPageState extends State<LgginPage> {
               height: 30,
             ),
             Container(
-              width: double.infinity,
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              color: Colors.green,
-              height: 30,
-              alignment: Alignment.center,
-              child: const Text('Login'),
-            ),
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                alignment: Alignment.center,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text('Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        )),
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                        backgroundColor: MaterialStateProperty.all(
+                            Color.fromARGB(255, 141, 79, 151))),
+                  ),
+                )),
             const SizedBox(
               height: 10,
             ),
