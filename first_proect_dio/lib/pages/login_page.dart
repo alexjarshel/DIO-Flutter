@@ -8,8 +8,10 @@ class LgginPage extends StatefulWidget {
 }
 
 class _LgginPageState extends State<LgginPage> {
-  String email = "";
-  String password = "";
+  TextEditingController emailControler =
+      TextEditingController(text: "default@gmail.com");
+  TextEditingController passwordControler =
+      TextEditingController(text: "Passwword");
   bool isObscureText = true;
 
   @override
@@ -70,10 +72,8 @@ class _LgginPageState extends State<LgginPage> {
                       height: 30,
                       alignment: Alignment.center,
                       child: TextField(
-                        onChanged: (value) {
-                          email = value;
-                          print(email);
-                        },
+                        controller: emailControler,
+                        onChanged: (value) {},
                         style: const TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             contentPadding: EdgeInsets.only(top: 0),
@@ -102,10 +102,8 @@ class _LgginPageState extends State<LgginPage> {
                       alignment: Alignment.center,
                       child: TextField(
                         obscureText: isObscureText,
-                        onChanged: (value) {
-                          password = value;
-                          print(password);
-                        },
+                        controller: passwordControler,
+                        onChanged: (value) {},
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(top: 0),
@@ -144,8 +142,8 @@ class _LgginPageState extends State<LgginPage> {
                           width: double.infinity,
                           child: TextButton(
                             onPressed: () {
-                              print(email);
-                              print(password);
+                              print(emailControler.text);
+                              print(passwordControler.text);
                             },
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all(
