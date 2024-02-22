@@ -8,6 +8,9 @@ class LgginPage extends StatefulWidget {
 }
 
 class _LgginPageState extends State<LgginPage> {
+  String email = "";
+  String password = "";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -65,9 +68,13 @@ class _LgginPageState extends State<LgginPage> {
                       //color: Colors.green,
                       height: 30,
                       alignment: Alignment.center,
-                      child: const TextField(
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
+                      child: TextField(
+                        onChanged: (value) {
+                          email = value;
+                          print(email);
+                        },
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
                             contentPadding: EdgeInsets.only(top: 0),
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -92,9 +99,13 @@ class _LgginPageState extends State<LgginPage> {
                       //color: Colors.green,
                       height: 30,
                       alignment: Alignment.center,
-                      child: const TextField(
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
+                      child: TextField(
+                        onChanged: (value) {
+                          password = value;
+                          print(password);
+                        },
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
                           contentPadding: EdgeInsets.only(top: 0),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -122,7 +133,10 @@ class _LgginPageState extends State<LgginPage> {
                         child: SizedBox(
                           width: double.infinity,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              print(email);
+                              print(password);
+                            },
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all(
                                     RoundedRectangleBorder(
