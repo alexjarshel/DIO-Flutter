@@ -10,6 +10,7 @@ class LgginPage extends StatefulWidget {
 class _LgginPageState extends State<LgginPage> {
   String email = "";
   String password = "";
+  bool isObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -100,27 +101,36 @@ class _LgginPageState extends State<LgginPage> {
                       height: 30,
                       alignment: Alignment.center,
                       child: TextField(
+                        obscureText: isObscureText,
                         onChanged: (value) {
                           password = value;
                           print(password);
                         },
                         style: const TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(top: 0),
-                          enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 141, 79, 151))),
-                          hintText: 'Password',
-                          hintStyle: TextStyle(color: Colors.white),
-                          prefixIcon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 141, 79, 151),
-                          ),
-                          suffixIcon: Icon(
-                            Icons.visibility_off,
-                            color: Color.fromARGB(255, 141, 79, 151),
-                          ),
-                        ),
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(top: 0),
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 141, 79, 151))),
+                            hintText: 'Password',
+                            hintStyle: TextStyle(color: Colors.white),
+                            prefixIcon: Icon(
+                              Icons.lock,
+                              color: Color.fromARGB(255, 141, 79, 151),
+                            ),
+                            suffixIcon: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  isObscureText = !isObscureText;
+                                });
+                              },
+                              child: Icon(
+                                isObscureText
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Color.fromARGB(255, 141, 79, 151),
+                              ),
+                            )),
                       ),
                     ),
                     const SizedBox(
