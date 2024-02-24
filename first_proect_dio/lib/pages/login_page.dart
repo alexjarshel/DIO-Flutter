@@ -1,3 +1,4 @@
+import 'package:first_proect_dio/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
 class LgginPage extends StatefulWidget {
@@ -144,6 +145,11 @@ class _LgginPageState extends State<LgginPage> {
                                   passwordControler.text == '123') {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text('Login OK')));
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const MainPage()));
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
