@@ -1,3 +1,6 @@
+import 'package:first_proect_dio/pages/page1.dart';
+import 'package:first_proect_dio/pages/page2.dart';
+import 'package:first_proect_dio/pages/page3.dart';
 import 'package:first_proect_dio/pages/registration_data.dart';
 import 'package:flutter/material.dart';
 
@@ -63,6 +66,15 @@ class _MainPageState extends State<MainPage> {
           Divider(),
         ]),
       )),
+      body: Column(
+        children: [
+          Expanded(
+            child: PageView(
+              children: [Page1Page(), Page2Page(), Page3Page()],
+            ),
+          )
+        ],
+      ),
     ));
   }
 }
