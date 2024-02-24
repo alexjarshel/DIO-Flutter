@@ -8,10 +8,8 @@ class LgginPage extends StatefulWidget {
 }
 
 class _LgginPageState extends State<LgginPage> {
-  TextEditingController emailControler =
-      TextEditingController(text: "default@gmail.com");
-  TextEditingController passwordControler =
-      TextEditingController(text: "Passwword");
+  TextEditingController emailControler = TextEditingController(text: "");
+  TextEditingController passwordControler = TextEditingController(text: "");
   bool isObscureText = true;
 
   @override
@@ -107,12 +105,12 @@ class _LgginPageState extends State<LgginPage> {
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(top: 0),
-                            enabledBorder: UnderlineInputBorder(
+                            enabledBorder: const UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Color.fromARGB(255, 141, 79, 151))),
                             hintText: 'Password',
-                            hintStyle: TextStyle(color: Colors.white),
-                            prefixIcon: Icon(
+                            hintStyle: const TextStyle(color: Colors.white),
+                            prefixIcon: const Icon(
                               Icons.lock,
                               color: Color.fromARGB(255, 141, 79, 151),
                             ),
@@ -126,7 +124,7 @@ class _LgginPageState extends State<LgginPage> {
                                 isObscureText
                                     ? Icons.visibility_off
                                     : Icons.visibility,
-                                color: Color.fromARGB(255, 141, 79, 151),
+                                color: const Color.fromARGB(255, 141, 79, 151),
                               ),
                             )),
                       ),
@@ -142,8 +140,15 @@ class _LgginPageState extends State<LgginPage> {
                           width: double.infinity,
                           child: TextButton(
                             onPressed: () {
-                              print(emailControler.text);
-                              print(passwordControler.text);
+                              if (emailControler.text == 'email@email.com' &&
+                                  passwordControler.text == '123') {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(content: Text('Login OK')));
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content: Text('Login error')));
+                              }
                             },
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all(
