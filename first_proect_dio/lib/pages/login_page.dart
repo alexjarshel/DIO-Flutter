@@ -9,8 +9,9 @@ class LgginPage extends StatefulWidget {
 }
 
 class _LgginPageState extends State<LgginPage> {
-  TextEditingController emailControler = TextEditingController(text: "");
-  TextEditingController passwordControler = TextEditingController(text: "");
+  TextEditingController emailControler =
+      TextEditingController(text: "email@email.com");
+  TextEditingController passwordControler = TextEditingController(text: "123");
   bool isObscureText = true;
 
   @override
