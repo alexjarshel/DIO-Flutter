@@ -12,6 +12,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  PageController controller = PageController(initialPage: 0);
+  int pagePosition = 0;
+
   @override
   Widget build(BuildContext context) {
     var space = SizedBox(
@@ -70,9 +73,26 @@ class _MainPageState extends State<MainPage> {
         children: [
           Expanded(
             child: PageView(
+              controller: controller,
+              onPageChanged: (value) {
+                setState(() {
+                  pagePosition = value;
+                });
+              },
               children: [Page1Page(), Page2Page(), Page3Page()],
             ),
-          )
+          ),
+          BottomNavigationBar(
+              onTap: (value) {
+                controller.jumpToPage(value);
+              },
+              currentIndex: pagePosition,
+              items: [
+                BottomNavigationBarItem(label: 'home', icon: Icon(Icons.home)),
+                BottomNavigationBarItem(label: 'Page 1', icon: Icon(Icons.add)),
+                BottomNavigationBarItem(
+                    label: 'Page 2', icon: Icon(Icons.person))
+              ])
         ],
       ),
     ));
