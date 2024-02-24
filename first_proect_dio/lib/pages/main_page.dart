@@ -1,3 +1,4 @@
+import 'package:first_proect_dio/pages/registration_data.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -27,9 +28,16 @@ class _MainPageState extends State<MainPage> {
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 5),
               width: double.infinity,
-              child: Text('User data'),
+              child: Text('registration data'),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop;
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RegistrationData(
+                          txt: 'registration data', data: ['Alex', '22'])));
+            },
           ),
           space,
           Divider(),
