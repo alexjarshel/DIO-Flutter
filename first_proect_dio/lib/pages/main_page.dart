@@ -42,7 +42,8 @@ class _MainPageState extends State<MainPage> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => RegistrationData(
-                          txt: 'registration data', data: ['Alex', '22'])));
+                          //txt: 'registration data', data: ['Alex', '22']
+                          )));
             },
           ),
           space,
