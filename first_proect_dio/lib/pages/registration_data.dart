@@ -19,12 +19,27 @@ class _RegistrationDataState extends State<RegistrationData> {
   var levels = [];
   var selectedLevel = '';
   var languages = [];
+  var selectedLanguages = [];
+  double chosenSalary = 0;
+  int experienceTime = 0;
 
   @override
   void initState() {
     levels = levelRepository.returnLevel();
     languages = languageRepository.returnLanguage();
     super.initState();
+  }
+
+  List<DropdownMenuItem> returnItens(int maxQuant) {
+    var itens = <DropdownMenuItem>[];
+    for (var i = 0; i <= maxQuant; i++) {
+      itens.add(DropdownMenuItem(
+        child: Text(i.toString()),
+        value: i,
+      ));
+    }
+
+    return itens;
   }
 
   @override
@@ -81,14 +96,47 @@ class _RegistrationDataState extends State<RegistrationData> {
                         value: language['isCheck'],
                         onChanged: (value) {
                           setState(() {
+                            print(language['language']);
+                            if (selectedLanguages
+                                .contains(language['language'])) {
+                              selectedLanguages.remove(language['language']);
+                            } else {
+                              selectedLanguages.add(language['language']);
+                            }
                             language['isCheck'] = !language['isCheck'];
                           });
-                          print(language['language']);
                         }))
                     .toList()),
+            TextLabel(text: 'Exeperince Time'),
+            DropdownButton(
+                value: experienceTime,
+                isExpanded: true,
+                items: returnItens(50),
+                onChanged: (value) {
+                  setState(() {
+                    experienceTime = int.parse(value.toString());
+                  });
+                }),
+            TextLabel(
+                text:
+                    'Salary expectations: R\$  ${chosenSalary.round().toString()}'),
+            Slider(
+                min: 0,
+                max: 10000,
+                value: chosenSalary,
+                onChanged: (double value) {
+                  setState(() {
+                    chosenSalary = value;
+                  });
+                }),
             TextButton(
                 onPressed: () {
                   print(nameControler.text);
+                  print(birthDateControler.text);
+                  print(selectedLevel);
+                  print(selectedLanguages);
+                  print(chosenSalary);
+                  print(experienceTime);
                 },
                 child: Text('save')),
           ],
