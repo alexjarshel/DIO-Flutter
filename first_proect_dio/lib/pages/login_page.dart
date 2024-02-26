@@ -1,14 +1,14 @@
 import 'package:first_proect_dio/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
-class LgginPage extends StatefulWidget {
-  const LgginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LgginPage> createState() => _LgginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LgginPageState extends State<LgginPage> {
+class _LoginPageState extends State<LoginPage> {
   TextEditingController emailControler =
       TextEditingController(text: "email@email.com");
   TextEditingController passwordControler = TextEditingController(text: "123");
