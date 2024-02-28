@@ -11,5 +11,13 @@ class AppImages {
   static String get soulOfCinder =>
       'lib/images/soul-of-cinder-dark-souls-dark-souls-iii-hd-wallpaper-preview.png';
 
+  static String get gramado => 'lib/images/gramado.png';
+
+  static String get mountain => 'lib/images/pareceErebor.png';
+
+  static String get serra => 'lib/images/serra.png';
+
+  static String get rapture => 'lib/images/raptureBIO.png';
+
   static String get ds2 => 'lib/images/wp2959494.png';
 }

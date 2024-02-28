@@ -14,10 +14,6 @@ class _imageAssetsPageState extends State<imageAssetsPage> {
     return ListView(
       children: [
         Image.asset(
-          AppImages.fireLink,
-          width: double.infinity,
-        ),
-        Image.asset(
           AppImages.ds2,
           width: double.infinity,
         ),
