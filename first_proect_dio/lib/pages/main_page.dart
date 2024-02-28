@@ -1,5 +1,5 @@
 import 'package:first_proect_dio/pages/card_page.dart';
-import 'package:first_proect_dio/pages/page2.dart';
+import 'package:first_proect_dio/pages/image_assets.dart';
 import 'package:first_proect_dio/pages/page3.dart';
 import 'package:first_proect_dio/shared/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
                   pagePosition = value;
                 });
               },
-              children: [CardPage(), Page2Page(), Page3Page()],
+              children: [CardPage(), imageAssetsPage(), Page3Page()],
             ),
           ),
           BottomNavigationBar(
