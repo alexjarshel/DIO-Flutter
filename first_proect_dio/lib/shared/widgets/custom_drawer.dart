@@ -26,7 +26,7 @@ class CustomDrawer extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        title: Text('Camera'),
+                        title: Text('Ca mera'),
                         leading: Icon(Icons.camera),
                       ),
                       ListTile(
