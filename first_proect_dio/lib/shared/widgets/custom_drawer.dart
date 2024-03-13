@@ -1,4 +1,6 @@
+import 'package:first_proect_dio/pages/configuration_page.dart';
 import 'package:first_proect_dio/pages/login_page.dart';
+import 'package:first_proect_dio/pages/random_number_page.dart';
 import 'package:first_proect_dio/pages/registration_data.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +9,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var space = SizedBox(
+    var space = const SizedBox(
       height: 10,
     );
     return Drawer(
@@ -51,9 +53,9 @@ class CustomDrawer extends StatelessWidget {
         ),
         InkWell(
           child: Container(
-              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               width: double.infinity,
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.person),
                   SizedBox(
@@ -78,7 +80,7 @@ class CustomDrawer extends StatelessWidget {
           child: Container(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               width: double.infinity,
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.info),
                   SizedBox(
@@ -94,9 +96,9 @@ class CustomDrawer extends StatelessWidget {
                 context: context,
                 builder: (BuildContext bc) {
                   return Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-                      child: SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 12),
+                      child: const SingleChildScrollView(
                         child: Column(
                           children: [
                             Text(
@@ -116,12 +118,12 @@ class CustomDrawer extends StatelessWidget {
           },
         ),
         space,
-        Divider(),
+        const Divider(),
         InkWell(
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             width: double.infinity,
-            child: Row(
+            child: const Row(
               children: [
                 Icon(Icons.settings),
                 SizedBox(
@@ -131,15 +133,40 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (bc) => ConfigurationPage()));
+          },
         ),
-        space,
-        Divider(),
+        const Divider(),
         InkWell(
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             width: double.infinity,
-            child: Row(
+            child: const Row(
+              children: [
+                Icon(Icons.numbers),
+                SizedBox(
+                  width: 5,
+                ),
+                Text('Rnadom number generator'),
+              ],
+            ),
+          ),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (bc) => RandomNumberPage()));
+          },
+        ),
+        space,
+        const Divider(),
+        InkWell(
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            width: double.infinity,
+            child: const Row(
               children: [
                 Icon(Icons.exit_to_app),
                 SizedBox(
@@ -159,8 +186,8 @@ class CustomDrawer extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    title: Text('APP'),
-                    content: Wrap(
+                    title: const Text('APP'),
+                    content: const Wrap(
                       children: [
                         Text('You will exit the app'),
                         Text('Exit the app?'),
@@ -174,12 +201,12 @@ class CustomDrawer extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => LoginPage()));
                           },
-                          child: Text('Yes')),
+                          child: const Text('Yes')),
                       TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('No'))
+                          child: const Text('No'))
                     ],
                   );
                 });
