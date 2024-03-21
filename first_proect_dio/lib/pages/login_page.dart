@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                         onChanged: (value) {},
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(top: 0),
+                            contentPadding: const EdgeInsets.only(top: 0),
                             enabledBorder: const UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Color.fromARGB(255, 141, 79, 151))),

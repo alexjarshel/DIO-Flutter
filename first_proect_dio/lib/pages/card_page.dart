@@ -30,10 +30,10 @@ class _CardPageState extends State<CardPage> {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           width: double.infinity,
           child: cardDetail == null
-              ? LinearProgressIndicator()
+              ? const LinearProgressIndicator()
               : InkWell(
                   onTap: () {
                     Navigator.push(
@@ -50,7 +50,7 @@ class _CardPageState extends State<CardPage> {
                       shadowColor: Colors.grey,
                       child: Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -62,19 +62,19 @@ class _CardPageState extends State<CardPage> {
                                 ),
                                 Text(
                                   cardDetail!.title,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w700),
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
                               textAlign: TextAlign.center,
                               cardDetail!.text,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -84,7 +84,7 @@ class _CardPageState extends State<CardPage> {
                                 alignment: Alignment.centerRight,
                                 child: TextButton(
                                     onPressed: () {},
-                                    child: Text(
+                                    child: const Text(
                                       'Read More',
                                       style: TextStyle(
                                           decoration: TextDecoration.underline),

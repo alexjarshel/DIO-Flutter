@@ -23,9 +23,9 @@ class _MainPageState extends State<MainPage> {
         child: Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('Main Page'),
+        title: const Text('Main Page'),
       ),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: Column(
         children: [
           Expanded(
@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage> {
                   pagePosition = value;
                 });
               },
-              children: [
+              children: const [
                 CardPage(),
                 imageAssetsPage(),
                 ListViewPage(),
@@ -51,7 +51,7 @@ class _MainPageState extends State<MainPage> {
                 controller.jumpToPage(value);
               },
               currentIndex: pagePosition,
-              items: [
+              items: const [
                 BottomNavigationBarItem(label: 'home', icon: Icon(Icons.home)),
                 BottomNavigationBarItem(label: 'Page 1', icon: Icon(Icons.add)),
                 BottomNavigationBarItem(

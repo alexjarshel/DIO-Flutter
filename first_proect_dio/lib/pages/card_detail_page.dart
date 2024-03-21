@@ -18,7 +18,7 @@ class CardDetailPage extends StatelessWidget {
           ),
           */
           body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,7 +26,7 @@ class CardDetailPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(Icons.close)),
+                    icon: const Icon(Icons.close)),
                 Row(
                   children: [
                     Image.network(
@@ -37,16 +37,16 @@ class CardDetailPage extends StatelessWidget {
                 ),
                 Text(
                   cardDetail.title,
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
+                  style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Expanded(
                   child: Text(
                     textAlign: TextAlign.center,
                     cardDetail.text,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),

@@ -4,7 +4,7 @@ import 'package:first_proect_dio/shared/widgets/text_label.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationData extends StatefulWidget {
-  RegistrationData({super.key});
+  const RegistrationData({super.key});
 
   @override
   State<RegistrationData> createState() => _RegistrationDataState();
@@ -35,8 +35,8 @@ class _RegistrationDataState extends State<RegistrationData> {
     var itens = <DropdownMenuItem>[];
     for (var i = 0; i <= maxQuant; i++) {
       itens.add(DropdownMenuItem(
-        child: Text(i.toString()),
         value: i,
+        child: Text(i.toString()),
       ));
     }
 
@@ -48,19 +48,19 @@ class _RegistrationDataState extends State<RegistrationData> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('User Data'),
+        title: const Text('User Data'),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         child: isLoading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : ListView(
                 children: [
-                  TextLabel(text: 'Name'),
+                  const TextLabel(text: 'Name'),
                   TextField(
                     controller: nameControler,
                   ),
-                  TextLabel(text: 'birth date'),
+                  const TextLabel(text: 'birth date'),
                   TextField(
                     controller: birthDateControler,
                     readOnly: true,
@@ -77,7 +77,7 @@ class _RegistrationDataState extends State<RegistrationData> {
                       }
                     },
                   ),
-                  TextLabel(text: 'Exeperince Level'),
+                  const TextLabel(text: 'Exeperince Level'),
                   Column(
                       children: levels
                           .map((level) => RadioListTile(
@@ -91,7 +91,7 @@ class _RegistrationDataState extends State<RegistrationData> {
                                 });
                               }))
                           .toList()),
-                  TextLabel(text: 'Prefered languages'),
+                  const TextLabel(text: 'Prefered languages'),
                   Column(
                       children: languages
                           .map((language) => CheckboxListTile(
@@ -111,7 +111,7 @@ class _RegistrationDataState extends State<RegistrationData> {
                                 });
                               }))
                           .toList()),
-                  TextLabel(text: 'Exeperince Time'),
+                  const TextLabel(text: 'Exeperince Time'),
                   DropdownButton(
                       value: experienceTime,
                       isExpanded: true,
@@ -173,7 +173,7 @@ class _RegistrationDataState extends State<RegistrationData> {
                         setState(() {
                           isLoading = true;
                         });
-                        Future.delayed(Duration(seconds: 2), () {
+                        Future.delayed(const Duration(seconds: 2), () {
                           setState(() {
                             isLoading = false;
                             Navigator.pop(context);
@@ -182,7 +182,7 @@ class _RegistrationDataState extends State<RegistrationData> {
 
                         print("Registration OK");
                       },
-                      child: Text('save')),
+                      child: const Text('save')),
                 ],
               ),
       ),

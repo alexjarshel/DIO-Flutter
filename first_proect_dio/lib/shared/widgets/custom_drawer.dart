@@ -28,15 +28,15 @@ class CustomDrawer extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        title: Text('Ca mera'),
-                        leading: Icon(Icons.camera),
+                        title: const Text('Ca mera'),
+                        leading: const Icon(Icons.camera),
                       ),
                       ListTile(
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        title: Text('Galery'),
-                        leading: Icon(Icons.archive_rounded),
+                        title: const Text('Galery'),
+                        leading: const Icon(Icons.archive_rounded),
                       )
                     ],
                   );
@@ -48,8 +48,8 @@ class CustomDrawer extends StatelessWidget {
                 child: Image.network(
                     'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'),
               ),
-              accountName: Text('Alex'),
-              accountEmail: Text('email@email')),
+              accountName: const Text('Alex'),
+              accountEmail: const Text('email@email')),
         ),
         InkWell(
           child: Container(
@@ -69,16 +69,16 @@ class CustomDrawer extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => RegistrationData(
+                    builder: (context) => const RegistrationData(
                         //txt: 'registration data', data: ['Alex', '22']
                         )));
           },
         ),
         space,
-        Divider(),
+        const Divider(),
         InkWell(
           child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               width: double.infinity,
               child: const Row(
                 children: [
@@ -136,7 +136,7 @@ class CustomDrawer extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
             Navigator.push(context,
-                MaterialPageRoute(builder: (bc) => ConfigurationPage()));
+                MaterialPageRoute(builder: (bc) => const ConfigurationPage()));
           },
         ),
         const Divider(),
@@ -157,7 +157,7 @@ class CustomDrawer extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
             Navigator.push(context,
-                MaterialPageRoute(builder: (bc) => RandomNumberPage()));
+                MaterialPageRoute(builder: (bc) => const RandomNumberPage()));
           },
         ),
         space,
@@ -199,7 +199,7 @@ class CustomDrawer extends StatelessWidget {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           },
                           child: const Text('Yes')),
                       TextButton(

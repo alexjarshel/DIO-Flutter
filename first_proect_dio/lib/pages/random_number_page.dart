@@ -36,7 +36,7 @@ class _RandomNumberPageState extends State<RandomNumberPage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('Random Numbers'),
+          title: const Text('Random Numbers'),
         ),
         body: Container(
           alignment: Alignment.center,
@@ -45,11 +45,11 @@ class _RandomNumberPageState extends State<RandomNumberPage> {
             children: [
               Text(
                 'Random Number Created : ${generatedNumber == null ? "" : generatedNumber.toString()}',
-                style: TextStyle(fontSize: 22),
+                style: const TextStyle(fontSize: 22),
               ),
               Text(
                 'Clicks : ${clicks == null ? "" : clicks.toString()}',
-                style: TextStyle(fontSize: 22),
+                style: const TextStyle(fontSize: 22),
               )
             ],
           ),
@@ -71,7 +71,7 @@ class _RandomNumberPageState extends State<RandomNumberPage> {
               storage.setInt(key_cliks, clicks!);
             });
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
       ),
     );

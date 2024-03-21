@@ -14,8 +14,8 @@ class _ListViewPageState extends State<ListViewPage> {
     return ListView(
       children: [
         ListTile(
-          title: Text('Soul of cinder'),
-          subtitle: Row(
+          title: const Text('Soul of cinder'),
+          subtitle: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [Text('Hello my chapa'), Text('08:07')],
           ),
@@ -25,15 +25,15 @@ class _ListViewPageState extends State<ListViewPage> {
             }
           }, itemBuilder: (BuildContext context) {
             return <PopupMenuEntry<String>>[
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'Menu1',
                 child: Text('opção1'),
               ),
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'Menu2',
                 child: Text('opção2'),
               ),
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'Menu3',
                 child: Text('opção3'),
               )

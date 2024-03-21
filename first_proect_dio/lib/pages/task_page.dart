@@ -42,7 +42,7 @@ class _TaskPageState extends State<TaskPage> {
                 context: context,
                 builder: (BuildContext bc) {
                   return AlertDialog(
-                    title: Text('Add new Task'),
+                    title: const Text('Add new Task'),
                     content: TextField(
                       controller: descriptionControler,
                     ),
@@ -51,7 +51,7 @@ class _TaskPageState extends State<TaskPage> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('Cancel')),
+                          child: const Text('Cancel')),
                       TextButton(
                           onPressed: () async {
                             await taskRepository.addTask(
@@ -59,23 +59,23 @@ class _TaskPageState extends State<TaskPage> {
                             setState(() {});
                             Navigator.pop(context);
                           },
-                          child: Text('save'))
+                          child: const Text('save'))
                     ],
                   );
                 });
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
         body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Column(
             children: [
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           'Only not closed',
                           style: TextStyle(fontSize: 18),
                         ),

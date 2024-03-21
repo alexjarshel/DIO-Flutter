@@ -1,7 +1,7 @@
 import 'package:first_proect_dio/model/task.dart';
 
 class TaskRepository {
-  List<Task> _tasks = [];
+  final List<Task> _tasks = [];
 
   Future<void> addTask(Task task) async {
     await Future.delayed(const Duration(milliseconds: 100));
