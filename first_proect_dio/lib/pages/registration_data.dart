@@ -2,6 +2,7 @@ import 'package:first_proect_dio/repositories/language_repositories.dart';
 import 'package:first_proect_dio/repositories/level_repository.dart';
 import 'package:first_proect_dio/shared/widgets/text_label.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegistrationData extends StatefulWidget {
   const RegistrationData({super.key});
@@ -24,11 +25,31 @@ class _RegistrationDataState extends State<RegistrationData> {
   int experienceTime = 0;
   bool isLoading = false;
 
+  late SharedPreferences storage;
+  final String REGISTRATION_NAME_KEY = 'REGISTRATION_NAME_KEY';
+  final String REGISTRATION_DATE_KEY = 'REGISTRATION_DATE_KEY';
+  final String REGISTRATION_LEVEL_KEY = 'REGISTRATION_LEVEL_KEY';
+  final String REGISTRATION_LANNGUAGES_KEY = 'REGISTRATION_LANNGUAGES_KEY';
+  final String REGISTRATION_EXPERIENCE_KEY = 'REGISTRATION_EXPERIENCE_KEY';
+  final String REGISTRATION_SALARY_KEY = 'REGISTRATION_SALARY_KEY';
+
   @override
   void initState() {
     levels = levelRepository.returnLevel();
     languages = languageRepository.returnLanguage();
     super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    storage = await SharedPreferences.getInstance();
+    nameControler.text = storage.getString(REGISTRATION_NAME_KEY) ?? '';
+    selectedLevel = storage.getString(REGISTRATION_LEVEL_KEY) ?? '';
+    birthDateControler.text = storage.getString(REGISTRATION_DATE_KEY) ?? '';
+    selectedLanguages =
+        storage.getStringList(REGISTRATION_LANNGUAGES_KEY) ?? [];
+    chosenSalary = storage.getDouble(REGISTRATION_SALARY_KEY) ?? 0;
+    experienceTime = storage.getInt(REGISTRATION_EXPERIENCE_KEY) ?? 0;
   }
 
   List<DropdownMenuItem> returnItens(int maxQuant) {
@@ -134,7 +155,7 @@ class _RegistrationDataState extends State<RegistrationData> {
                         });
                       }),
                   TextButton(
-                      onPressed: () {
+                      onPressed: () async {
                         setState(() {
                           isLoading = false;
                         });
@@ -169,6 +190,19 @@ class _RegistrationDataState extends State<RegistrationData> {
                                   'the salary claim cannot be lower than 1000')));
                           return;
                         }
+                        print('pre save');
+                        await storage.setString(
+                            REGISTRATION_NAME_KEY, nameControler.text);
+                        await storage.setString(
+                            REGISTRATION_DATE_KEY, birthDate.toString());
+                        await storage.setString(
+                            REGISTRATION_LEVEL_KEY, selectedLevel);
+                        await storage.setString(REGISTRATION_LANNGUAGES_KEY,
+                            selectedLanguages.toString());
+                        await storage.setInt(
+                            REGISTRATION_EXPERIENCE_KEY, experienceTime);
+                        await storage.setDouble(
+                            REGISTRATION_SALARY_KEY, chosenSalary);
 
                         setState(() {
                           isLoading = true;
